@@ -1,5 +1,7 @@
 package com.staxmod.dao;
 
+import com.staxmod.com.staxmod.core.Globals;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -35,11 +37,11 @@ public class Book {
      * Book's constructor
      */
     public Book() {
-        this.setTitle("");
+        this.setTitle(Globals.EMPTY);
         this.setAuthors(new ArrayList<Author>());
-        this.setEditorial("");
-        this.setISBN("");
-        this.setPrice(0.0d);
+        this.setEditorial(Globals.EMPTY);
+        this.setISBN(Globals.EMPTY);
+        this.setPrice(Globals.ZERO);
     }
 
     /**
@@ -141,11 +143,28 @@ public class Book {
         this.getAuthors().add(author);
     }
 
+    /**
+     * Override of toString method, return the name of the author with title and all surnames.
+     *
+     * @return author object
+     */
     @Override public String toString() {
-        String authorText = "";
+        String authorText = Globals.EMPTY;
+
         for(Author author : getAuthors()) {
-            authorText += author.toString() + ",";
+            authorText += author.toString() + Globals.COMMA;
         }
-        return "Los autores: " + authorText + " publicaron el libro \"" + this.getTitle() + "\" en la editorial " +  this.getEditorial() + ". Cuesta " + this.getPrice() + " euros.";
+
+        return Globals.MSG_1
+                + authorText
+                + Globals.MSG_2
+                + Globals.DOUBLE_COMMA
+                + this.getTitle()
+                + Globals.DOUBLE_COMMA
+                + Globals.MSG_3
+                + this.getEditorial()
+                + Globals.MSG_4
+                + String.valueOf(this.getPrice())
+                + Globals.MSG_5;
     }
 }

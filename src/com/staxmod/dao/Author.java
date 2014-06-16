@@ -112,6 +112,9 @@ public class Author {
      * @return author object
      */
     @Override public String toString() {
-        return this.getTitle() + this.getName() + this.getFirstName() + this.getSecondName();
+        return this.getTitle()
+                + this.getName()
+                + this.getFirstName()
+                + this.getSecondName();
     }
 }
