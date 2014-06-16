@@ -1,4 +1,4 @@
-package com.staxmod.com.staxmod.core;
+package com.staxmod.core;
 
 import com.staxmod.dao.Book;
 import com.staxmod.parser.XMLParser;

@@ -1,4 +1,4 @@
-package com.staxmod.com.staxmod.core;
+package com.staxmod.core;
 
 /**
  * @author Adrian Diez

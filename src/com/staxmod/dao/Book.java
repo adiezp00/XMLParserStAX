@@ -1,9 +1,8 @@
 package com.staxmod.dao;
 
-import com.staxmod.com.staxmod.core.Globals;
+import com.staxmod.core.Globals;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**

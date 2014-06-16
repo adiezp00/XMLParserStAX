@@ -1,6 +1,6 @@
 package com.staxmod.parser;
 
-import com.staxmod.com.staxmod.core.Globals;
+import com.staxmod.core.Globals;
 import com.staxmod.dao.Author;
 import com.staxmod.dao.Book;
 
