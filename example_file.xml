@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Libros>
+    <Libro isbn="a1">
+        <titulo>29</titulo>
+        <autores>
+			<autor idAutor="1">
+				<nombre>Juan</nombre>
+				<primerApellido>Perez</primerApellido>
+				<segundoApellido>Gonz</segundoApellido>
+			</autor>
+			<autor idAutor="2">
+				<nombre>Marco</nombre>
+				<primerApellido>Ordaz</primerApellido>
+				<segundoApellido>Diaz</segundoApellido>
+			</autor>
+		</autores>
+        <editorial idEditorial="b1">
+			<nombre>ANAYA</nombre>
+		</editorial>
+        <precio>20</precio>
+    </Libro>
+    <Libro isbn="a2">
+        <titulo>35</titulo>
+        <autores>
+			<autor idAutor="3">
+				<nombre>Victor</nombre>
+				<primerApellido>Santos</primerApellido>
+				<segundoApellido>Lopez</segundoApellido>
+			</autor>
+		</autores>
+        <editorial idEditorial="b1">
+			<nombre>SM</nombre>
+		</editorial>
+        <precio>10</precio>
+    </Libro>
+</Libros>
