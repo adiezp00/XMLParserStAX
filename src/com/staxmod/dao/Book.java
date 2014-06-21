@@ -40,7 +40,7 @@ public class Book {
         this.setAuthors(new ArrayList<Author>());
         this.setEditorial(Globals.EMPTY);
         this.setISBN(Globals.EMPTY);
-        this.setPrice(Globals.ZERO);
+        this.setPrice(Globals.ZERO_D);
     }
 
     /**

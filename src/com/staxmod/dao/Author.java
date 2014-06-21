@@ -1,5 +1,7 @@
 package com.staxmod.dao;
 
+import com.staxmod.core.Globals;
+
 /**
  * @author Adrian Diez
  * @author Emanuel Iosif
@@ -28,10 +30,10 @@ public class Author {
      * Author's empty constructor.
      */
     public Author() {
-        this.setTitle("");
-        this.setName("");
-        this.setFirstName("");
-        this.setSecondName("");
+        this.setTitle(Globals.EMPTY);
+        this.setName(Globals.EMPTY);
+        this.setFirstName(Globals.EMPTY);
+        this.setSecondName(Globals.EMPTY);
     }
 
     /**

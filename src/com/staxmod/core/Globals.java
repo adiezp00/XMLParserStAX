@@ -40,11 +40,28 @@ public class Globals {
     public static final String COMMA = ",";
     public static final String DOUBLE_COMMA = "\"";
 
+    /** Integer values **/
+    public static final int ZERO_I = 0;
+
     /** Double values **/
-    public static final double ZERO = 0.0d;
+    public static final double ZERO_D = 0.0d;
 
     /** Error value **/
     public static final int ERROR = -1;
+
+    /** Flags for XMLParser **/
+    public static final int BOOK_LOCAL_NAME = 0;
+    public static final int AUTHOR_LOCAL_NAME = 1;
+
+    /** XML tag values **/
+    public static final String BOOK = "Libro";
+    public static final String AUTHOR = "autor";
+    public static final String NAME = "nombre";
+    public static final String TITLE_B = "titulo";
+
+    /** Boolean values **/
+    public static final boolean EXISTS = true;
+    public static final boolean NO_EXISTS = false;
 }
 
 

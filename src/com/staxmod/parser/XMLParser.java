@@ -60,45 +60,46 @@ public class XMLParser {
                 switch(event) {
                     //TODO finalizar el parser, testearlo y refactorizar lo necesario.
                     case XMLStreamConstants.START_ELEMENT:
-                        if(xmlStreamReader.getLocalName().equals("Libro")){
+                        if(xmlStreamReader.getLocalName().equals(Globals.BOOK)){
                             bookToStore = new Book();
-                            bookToStore.setISBN(xmlStreamReader.getAttributeValue(0));
-                        }else if(xmlStreamReader.getLocalName().equals("titulo")){
-                            m_bTitle = true;
+                            bookToStore.setISBN(xmlStreamReader.getAttributeValue(Globals.ZERO_I));
+                        }else if(xmlStreamReader.getLocalName().equals(Globals.TITLE_B)){
+                            m_bTitle = Globals.EXISTS;
                         }else if(xmlStreamReader.getLocalName().equals("autores")){
-                            m_bAuthors = true;
+                            m_bAuthors = Globals.EXISTS;
                         }else if(xmlStreamReader.getLocalName().equals("editorial")){
-                            m_bPrice = true;
+                            m_bPrice = Globals.EXISTS;
                         }else if(xmlStreamReader.getLocalName().equals("editorial")){
-                            m_bEditorial = true;
+                            m_bEditorial = Globals.EXISTS;
                         }
                         break;
 
                     case XMLStreamConstants.CHARACTERS:
                         if(m_bTitle) {
                             bookToStore.setTitle(xmlStreamReader.getText());
-                            m_bTitle =false;
+                            m_bTitle = Globals.NO_EXISTS;
                         }else if(m_bAuthors){
                             Author author = null;
-                            boolean name = false, firstname = false, secondname = false, title = false;
+                            boolean name = Globals.NO_EXISTS, firstname = Globals.NO_EXISTS,
+                                    secondname = Globals.NO_EXISTS, title = Globals.NO_EXISTS;
                             switch (xmlStreamReader.getEventType()) {
                                 case XMLStreamConstants.START_ELEMENT:
-                                    if(xmlStreamReader.getLocalName().equals("autor")){
+                                    if(xmlStreamReader.getLocalName().equals(Globals.AUTHOR)){
                                         author = new Author();
-                                    }else if(xmlStreamReader.getLocalName().equals("nombre")){
-                                        name = true;
+                                    }else if(xmlStreamReader.getLocalName().equals(Globals.NAME)){
+                                        name = Globals.EXISTS;
                                     }else if(xmlStreamReader.getLocalName().equals("primerApellido")){
-                                        firstname = true;
+                                        firstname = Globals.EXISTS;
                                     }else if(xmlStreamReader.getLocalName().equals("segundoApellido")){
-                                        secondname = true;
+                                        secondname = Globals.EXISTS;
                                     }else if(xmlStreamReader.getLocalName().equals("titulo")){
-                                        title = true;
+                                        title = Globals.EXISTS;
                                     }
                                     break;
                                 case XMLStreamConstants.CHARACTERS:
                                     if(name) {
                                        author.setName(xmlStreamReader.getText());
-                                        name = false;
+                                        name = Globals.NO_EXISTS;
                                     }
                                     //TODO Lo mismo que con name para el resto de casos.
                             }
@@ -114,7 +115,7 @@ public class XMLParser {
                         break;
 
                     case XMLStreamConstants.END_ELEMENT:
-                        if(xmlStreamReader.getLocalName().equals("Libro")){
+                        if(xmlStreamReader.getLocalName().equals(Globals.BOOK)){
                             bookList.add(bookToStore);
                         }
                         break;
